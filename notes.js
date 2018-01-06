@@ -1,7 +1,24 @@
-console.log('Starting app');
+let addNote = (title,body) => {
+    console.log(`adding note ${title} ${body}`);
+};
 
 
-module.exports.addNote = () => {
-  console.log('Add note');
-  return 'New note';
+let getAll = () => {
+    console.log(`Getting all notes`);
+};
+
+let getNote = (title) =>{
+  console.log(`Getting ${title}`);
+};
+
+let removeNote = (title) =>{
+    console.log(`Removing ${title}`);
+};
+
+
+module.exports = {
+    addNote,
+    getAll,
+    getNote,
+    removeNote
 };
