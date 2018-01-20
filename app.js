@@ -13,7 +13,10 @@ let command = process.argv[2];
 
 if(command === 'add'){
 
-    notes.addNote(argv.title,argv.body)
+    let add = notes.addNote(argv.title,argv.body);
+    if(add){
+        console.log(`${add.title} has been added`);
+    }
 
 }else if(command === 'list'){
 
@@ -21,11 +24,15 @@ if(command === 'add'){
 
 }else if(command === 'read'){
 
-    notes.getNote(argv.title);
+    let read = notes.getNote(argv.title);
+    let message = read ? `Title: ${read.title} \nBody: ${read.body}` : 'Note not found';
+    console.log(message);
 
 }else if(command === 'remove'){
 
-    notes.removeNote(argv.title);
+    let remove = notes.removeNote(argv.title);
+    let message = remove ? 'Note was removed' : 'Note was not removed';
+    console.log(message);
 
 }else{
     console.log("Command Not Recognized");
